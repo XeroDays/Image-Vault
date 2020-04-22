@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Image_Vault
 {
-    public partial class Form1 : Form
+    public partial class Dashboard_Main : Form
     {
-        public Form1()
+        public Dashboard_Main()
         {
             InitializeComponent();
         }
