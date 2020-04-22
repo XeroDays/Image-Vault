@@ -52,10 +52,19 @@
     <Compile Include="Dashboard_Main.Designer.cs">
       <DependentUpon>Dashboard_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dashboard_LockImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dashboard_LockImages.Designer.cs">
+      <DependentUpon>Dashboard_LockImages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard_Main.resx">
       <DependentUpon>Dashboard_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dashboard_LockImages.resx">
+      <DependentUpon>Dashboard_LockImages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +90,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\drop.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\icons8-close-window-30 %281%29.png" />
     <Content Include="Todo.txt" />

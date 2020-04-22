@@ -14,3 +14,9 @@ Version 1.0.0.2
 	- Added Customer Title bar , Title, Close Button
 	- Added Main Buttons
 	- Added Panel for Adding other Forms inside the PanelDashboard
+
+Version 1.0.0.3
+	- Added Moving dashboard Form on Mouse Down
+	- Function Added for inserting form inside the Dashbboard Panel
+	- Added Dispose on MAin Form Close Button
+	- Added Labals and Panels in Dashboard_LockImages Form

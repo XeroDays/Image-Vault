@@ -20,3 +20,5 @@ Todo:
 		- Encryption class will Contain 2 functions 
 			- public static string EncryptPass(string realPassword)
 			- public static string DecrpytPass(string encryptedPassword)
+ - Every Form should be Borderless
+ - UploadForm Function is used to Insert form inside the Dashboard Panel.

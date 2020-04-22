@@ -63,6 +63,16 @@ namespace Image_Vault.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drop {
+            get {
+                object obj = ResourceManager.GetObject("drop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_window_30__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-window-30 (1)", resourceCulture);
