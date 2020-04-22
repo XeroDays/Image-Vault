@@ -6,3 +6,11 @@ Version 1.0.0.1
 	- Added Version.txt File
 	- Addeed Todo.txt File
 	- Wrote Instructions in Todo.txt
+
+Version 1.0.0.2
+	- Dashboard Form initialied on main function.
+	- Added more Todo's
+	- Removed Borders from Dashboard
+	- Added Customer Title bar , Title, Close Button
+	- Added Main Buttons
+	- Added Panel for Adding other Forms inside the PanelDashboard

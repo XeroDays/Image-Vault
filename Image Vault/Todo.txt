@@ -7,3 +7,16 @@
 
 - when commiting minor changing must change the version number
 - Also Every Commit should have detial on Version.txt
+
+
+
+Todo:
+ - First of all (Icons)
+ - Create "About" Form for taking credits.
+ - Login Form should be Created First
+		- Login will Containt only Password
+		- PAssword will be Encrypted and Stored in txt File in Documents
+		- Encryption Class will be in Controllers folder
+		- Encryption class will Contain 2 functions 
+			- public static string EncryptPass(string realPassword)
+			- public static string DecrpytPass(string encryptedPassword)
