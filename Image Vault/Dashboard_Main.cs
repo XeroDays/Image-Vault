@@ -79,6 +79,11 @@ namespace Image_Vault
         {
             this.Dispose();
         }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
