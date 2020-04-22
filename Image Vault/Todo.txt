@@ -1,0 +1,9 @@
+﻿Version Incrementation
+1.2.3.0
+1 = Major Release
+2 = Defact Addition
+3 = Error Fixing
+0 = Minor Changes and Commits
+
+- when commiting minor changing must change the version number
+- Also Every Commit should have detial on Version.txt
