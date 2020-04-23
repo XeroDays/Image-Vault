@@ -28,28 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureDrop = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnBrowse = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDrop)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureDrop
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Image_Vault.Properties.Resources.drop;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(650, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop);
-            this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
+            this.pictureDrop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureDrop.Image = global::Image_Vault.Properties.Resources.drop;
+            this.pictureDrop.Location = new System.Drawing.Point(12, 129);
+            this.pictureDrop.Name = "pictureDrop";
+            this.pictureDrop.Size = new System.Drawing.Size(650, 91);
+            this.pictureDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureDrop.TabIndex = 0;
+            this.pictureDrop.TabStop = false;
+            this.pictureDrop.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
+            this.pictureDrop.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             // 
             // label1
             // 
@@ -61,6 +58,8 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Drag && Drop Images Here!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
+            this.label1.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             // 
             // label2
             // 
@@ -72,32 +71,23 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "OR";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
+            this.label2.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             // 
-            // label3
+            // btnBrowse
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(8, 268);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(650, 30);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Browse";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(56, 332);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBrowse.Font = new System.Drawing.Font("Cambria", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBrowse.Location = new System.Drawing.Point(8, 265);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(650, 30);
+            this.btnBrowse.TabIndex = 1;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.btnBrowse.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
+            this.btnBrowse.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             // 
             // Dashboard_LockImages
             // 
@@ -106,27 +96,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(674, 453);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureDrop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard_LockImages";
             this.Text = "Dashboard_LockImages";
-            this.Load += new System.EventHandler(this.Dashboard_LockImages_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDrop)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureDrop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label btnBrowse;
     }
 }

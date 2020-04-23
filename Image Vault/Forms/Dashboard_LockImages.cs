@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,70 +16,51 @@ namespace Image_Vault.Forms
         public Dashboard_LockImages()
         {
             InitializeComponent();
+
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Form_DragEnter(object sender, DragEventArgs e)
         {
-            AddImage();
-          
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
         }
 
-        private void Showorhide()
-        {
-            label1.Hide();
-            label2.Hide();
-            label3.Hide();
-            pictureBox1.Hide();
+        private void Form_DragDrop(object sender, DragEventArgs e)
+        { 
+            string[] dropped = ((string[])e.Data.GetData(DataFormats.FileDrop));
+            List<string> DraggedGFiles = dropped.ToList();
 
-            flowLayoutPanel1.Show();
-        }
+            if (!DraggedGFiles.Any())
+                return;
 
-        private void AddImage()
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = true;
-            ofd.Title = "Select Picture";
-            ofd.Filter = "Picture(*.jpg;*.png;*.bmp;*.gif)| *.jpg;*.png;*.bmp;*.gif";
-            var imagee = imageList1.Images; //later use--
-            if (ofd.ShowDialog() == DialogResult.OK)
+            foreach (string drop in dropped)
+                if (Directory.Exists(drop))
+                    DraggedGFiles.AddRange(Directory.GetFiles(drop, "*.jpg", SearchOption.AllDirectories));
+            int count = 0;
+            foreach (var item in DraggedGFiles)
             {
-                imagee.Add(new Bitmap(ofd.FileName)); //for later use may be --
-                foreach (string image in ofd.FileNames)
+                count++;
+            } 
+            MessageBox.Show("Total Images Found : " + count);
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog ss = new FolderBrowserDialog();
+            if (ss.ShowDialog() == DialogResult.OK)
+            {
+                List<string> DraggedGFiles = new List<string>(); 
+                if (Directory.Exists(ss.SelectedPath))
+                DraggedGFiles.AddRange(Directory.GetFiles(ss.SelectedPath, "*.jpg", SearchOption.AllDirectories));
+                int count = 0;
+                foreach (var item in DraggedGFiles)
                 {
-                    PictureBox pb = new PictureBox();
-
-                    // assign the image
-                    pb.Image = new Bitmap(image);
-
-                    // stretch the image
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                    // set the size of the picture box
-                    pb.Height = pb.Image.Height / 10;
-                    pb.Width = pb.Image.Width / 10;
-
-                    // add the control to the container
-                    flowLayoutPanel1.Controls.Add(pb);
-                    flowLayoutPanel1.Dock = DockStyle.Fill;
-                    Showorhide();
+                    count++;
                 }
+                MessageBox.Show("Total Images Found : " + count);
             }
-        }
-
-        private void Dashboard_LockImages_Load(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Hide();
-        }
-
-        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
-        {
-         
-            
-        }
-
-        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
-        {
-            
         }
     }
 }

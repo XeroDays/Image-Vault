@@ -20,3 +20,8 @@ Version 1.0.0.3
 	- Function Added for inserting form inside the Dashbboard Panel
 	- Added Dispose on MAin Form Close Button
 	- Added Labals and Panels in Dashboard_LockImages Form
+
+Version 1.0.0.4
+	- Added Folder Drag and Drop 
+	- Can Scan full Folder for Images
+	- Added Method for Browse Button on Lock Items.
