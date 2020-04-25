@@ -31,3 +31,9 @@ Version 1.0.0.5
 	- File is Locked
 	- Added Gallary Imports
 	- Files are Imported to Program from Vault folder Securely.
+
+Version 1.0.0.6
+	- Remove Files from Vault Folder on Delete.
+	- Added Restore Feature
+	- Added Message Boxed for Alerting
+	

@@ -72,7 +72,8 @@ namespace Image_Vault.Forms
                 FileInfo file = new FileInfo(filePath);
                 string GUID = fileController.Move_To_Vault(file);
                 sysController.AddRecord(file.FullName, GUID);
-            }
+            } 
+            MessageBox.Show("Total Files Locked : " + list_imageFiles.Count(),"Files Locked Successfully!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         } 
     }
 }

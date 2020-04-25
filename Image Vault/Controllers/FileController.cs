@@ -55,20 +55,26 @@ namespace Image_Vault.Controllers
 
         public void RestoreFile(string fileGUID)
 	    {
-           
+            dbController db = new dbController();
             string sql = "Select OriginalFilePath from tblFiles Where LockedFileName ='"+fileGUID+"'";
-            string originalPath = new dbController().getQueryScaller(sql).ToString();
-            sql = "Delete from tblFiles Where LockedFileName ='" + fileGUID + "'";
-            try
+            string originalPath = db.getQueryScaller(sql).ToString();
+            sql = "Update tblFiles Set Status = 0 Where LockedFileName ='" + fileGUID + "'";
+            db.getQueryScaller(sql) ;
+            string LockedFilePath = VaultFolderPath() + fileGUID;
+            if (File.Exists(LockedFilePath))
             {
-                File.Move(VaultFolderPath() + fileGUID, originalPath);
-            }
-            catch (Exception e )
-            {
-                Console.WriteLine(e);
-            }
-          
-        
+                File.Copy(LockedFilePath, originalPath);
+            } 
+
 	    }
+
+        public void DeleteFile(string fileGUID)
+	    {
+            dbController db = new dbController();
+            string sql = "Select OriginalFilePath from tblFiles Where LockedFileName ='" + fileGUID + "'";
+            string originalPath = db.getQueryScaller(sql).ToString();
+            sql = "Update tblFiles Set Status = 0 Where LockedFileName ='" + fileGUID + "'";
+            db.getQueryScaller(sql); 
+        }
     }
 }

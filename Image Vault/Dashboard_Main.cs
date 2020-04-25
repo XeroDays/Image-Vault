@@ -74,6 +74,7 @@ namespace Image_Vault
         private void Dashboard_Main_Load(object sender, EventArgs e)
         {
             btnLockImages.PerformClick();
+            sysController.DeleteOldFiles();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -87,7 +88,7 @@ namespace Image_Vault
 
         private void btnMyGallary_Click(object sender, EventArgs e)
         {
-           uploadForm(new Dashboard_Gallery());
+            uploadForm(new Dashboard_Gallery());
             // new Dashboard_Gallery().Show();
         }
     }
