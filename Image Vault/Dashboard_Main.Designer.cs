@@ -118,6 +118,7 @@
             this.btnMyGallary.TabIndex = 1;
             this.btnMyGallary.Text = "My Gallary";
             this.btnMyGallary.UseVisualStyleBackColor = false;
+            this.btnMyGallary.Click += new System.EventHandler(this.btnMyGallary_Click);
             // 
             // btnSettings
             // 

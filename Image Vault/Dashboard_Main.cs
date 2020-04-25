@@ -1,4 +1,5 @@
-﻿using Image_Vault.Forms;
+﻿using Image_Vault.Controllers;
+using Image_Vault.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,8 +82,13 @@ namespace Image_Vault
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
-        {
+        {  
+        }
 
+        private void btnMyGallary_Click(object sender, EventArgs e)
+        {
+           uploadForm(new Dashboard_Gallery());
+            // new Dashboard_Gallery().Show();
         }
     }
 

@@ -103,6 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard_LockImages";
             this.Text = "Dashboard_LockImages";
+//            this.Load += new System.EventHandler(this.Dashboard_LockImages_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureDrop)).EndInit();

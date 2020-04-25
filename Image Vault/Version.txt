@@ -25,3 +25,9 @@ Version 1.0.0.4
 	- Added Folder Drag and Drop 
 	- Can Scan full Folder for Images
 	- Added Method for Browse Button on Lock Items.
+
+Version 1.0.0.5
+	- Added Move File to Vault Folder
+	- File is Locked
+	- Added Gallary Imports
+	- Files are Imported to Program from Vault folder Securely.

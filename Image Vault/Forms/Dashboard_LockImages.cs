@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Image_Vault.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,15 +43,15 @@ namespace Image_Vault.Forms
             foreach (var item in DraggedGFiles)
             {
                 count++;
-            } 
-            MessageBox.Show("Total Images Found : " + count);
+            }
+            lockFiles(DraggedGFiles);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog ss = new FolderBrowserDialog();
             if (ss.ShowDialog() == DialogResult.OK)
-            {
+            {  
                 List<string> DraggedGFiles = new List<string>(); 
                 if (Directory.Exists(ss.SelectedPath))
                 DraggedGFiles.AddRange(Directory.GetFiles(ss.SelectedPath, "*.jpg", SearchOption.AllDirectories));
@@ -59,8 +60,19 @@ namespace Image_Vault.Forms
                 {
                     count++;
                 }
-                MessageBox.Show("Total Images Found : " + count);
+                lockFiles(DraggedGFiles);
             }
         }
+
+        private void lockFiles(List<string> list_imageFiles)
+        {
+            FileController  fileController = new FileController();
+            foreach (string filePath in list_imageFiles)
+            {
+                FileInfo file = new FileInfo(filePath);
+                string GUID = fileController.Move_To_Vault(file);
+                sysController.AddRecord(file.FullName, GUID);
+            }
+        } 
     }
 }
