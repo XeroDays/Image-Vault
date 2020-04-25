@@ -16,7 +16,7 @@ Features:
   # Dependencies
   - .Net 4.5  
   
- # How it Works:
+ # How it Locks:
   - Take Images when you drop a folder.
   - Move the Image to Document/ImageVault Folder.
   - Rename the File with a GUID key. (Globally Unique Identifier)
@@ -24,4 +24,11 @@ Features:
   - Store Record info in SQLite db for:
     - Original File Location
     - VaultFolder File Name (GUID)
+ 
+ # How it Un-Locks:
+  - User Click Restore on Selected Images from Gallary.
+  - Get GUID from Selected Images.
+  - Search in SQLite database for Original File Paths Where GUID = 'Selected GUID'
+  - Move back the File from VaultFolder to Original Path.
+  - Add its Extension back to it.
  
