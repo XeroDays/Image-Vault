@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\dataController.cs" />
     <Compile Include="Controllers\dbController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\sysController.cs" />
@@ -59,6 +60,12 @@
     </Compile>
     <Compile Include="Dashboard_Main.Designer.cs">
       <DependentUpon>Dashboard_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dashboard_Gallery.cs">
       <SubType>Form</SubType>
@@ -76,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard_Main.resx">
       <DependentUpon>Dashboard_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard_Gallery.resx">
       <DependentUpon>Dashboard_Gallery.cs</DependentUpon>

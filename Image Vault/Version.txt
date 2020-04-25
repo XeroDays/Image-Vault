@@ -36,4 +36,10 @@ Version 1.0.0.6
 	- Remove Files from Vault Folder on Delete.
 	- Added Restore Feature
 	- Added Message Boxed for Alerting
-	
+
+Version 1.0.0.7
+	- Added About Us
+	- Removed Setting Button
+	- Added Data Controller Class for Static Values
+	- Added Version to About class
+	- Added Version Label to Dashboard Main 

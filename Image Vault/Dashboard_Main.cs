@@ -73,6 +73,7 @@ namespace Image_Vault
 
         private void Dashboard_Main_Load(object sender, EventArgs e)
         {
+            lblVersion.Text = "Version : " + dataController.Version;
             btnLockImages.PerformClick();
             sysController.DeleteOldFiles();
         }
@@ -83,7 +84,8 @@ namespace Image_Vault
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
-        {  
+        {
+            uploadForm(new AboutUs());
         }
 
         private void btnMyGallary_Click(object sender, EventArgs e)
@@ -91,6 +93,7 @@ namespace Image_Vault
             uploadForm(new Dashboard_Gallery());
             // new Dashboard_Gallery().Show();
         }
+ 
     }
 
 
