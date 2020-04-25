@@ -15,3 +15,13 @@ Features:
   
   # Dependencies
   - .Net 4.5  
+  
+ # How it Works:
+  - Take Images when you drop a folder.
+  - Move the Image to Document/ImageVault Folder.
+  - Rename the File with a GUID key. (Globally Unique Identifier)
+  - Removes the Extension.
+  - Store Record info in SQLite db for:
+    - Original File Location
+    - VaultFolder File Name (GUID)
+ 
